@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(background.jpg) no-repeat center;
+    background-size: cover;
+    animation: backgroundMove 10s infinite alternate;
+}
+
+@keyframes backgroundMove{
+    from{
+        background-position: center;
+    }
+    to{
+        background-position: 55% center;
+    }
+}
+
+.profile-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 3em;
+    padding: 2% 3%;
+    border-radius: 1em;
+    background-color: rgba(148, 148, 148, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    animation: cardShow 1s ease;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    transition: 0.4s ease;
+}
+
+.profile-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes cardShow{
+    from{
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.profile-card img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    transition: 0.4s ease;
+}
+
+.profile-card img:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.info-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 1.5em;
+}
+
+.info h2{
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.info p{
+    opacity: 0.8;
+}
+
+.numbers-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+.numbers-grid .box{
+    transition: 0.3s ease;
+}
+
+.numbers-grid .box:hover{
+    transform: translateY(-5px);
+}
+
+.numbers-grid .box p:first-child{
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.numbers-grid .box p:last-child{
+    font-weight: 400;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.profile-card .btn-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.btn-box button{
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-box .Follow{
+    background-color: white;
+    color: black;
+}
+
+.btn-box .Follow:hover{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-box .message{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-box .message:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.btn-box button:active{
+    transform: scale(0.95);
+}
+
+@media(max-width: 900px){
+
+    .profile-card{
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .profile-card .numbers-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+
+    .btn-box button{
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: 0.3s ease;
+    }
+}
